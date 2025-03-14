@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Foodie's Delight</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#order">Order Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1 class="text-center my-5">Welcome to Foodie</h1>
+        
+            <p class="text-center my-3">Delicious food delivered to your doorstep</p>
+            <div class="text-center">
+                
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="text-center my-5">Our Menu</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card">
+                        <img src="assets\burger.jpeg" class="card-img-top" alt="Burger">
+                        <div class="card-body">
+                            <h5 class="card-title">Burger</h5>
+                            <p class="card-text">Price: $10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="assets/pasta.jpeg" class="card-img-top" alt="Pasta">
+                        <div class="card-body">
+                            <h5 class="card-title">Pasta</h5>
+                            <p class="card-text">Price: $15</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="assets/pizza.jpeg" class="card-img-top" alt="Pizza">
+                        <div class="card-body">
+                            <h5 class="card-title">Pizza</h5>
+                            <p class="card-text">Price: $12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="order  bg-light" id="order">
+        <div class="container">
+            <h2 class="text-center my-5">Place Your Order</h2>
+            <form id="orderForm" action="#order-summary" method="post">
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Delivery Address</label>
+                    <textarea class="form-control" id="address" rows="3" required>Enter your address...</textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="foodItem" class="form-label">Select Food Item</label>
+                    <select class="form-select" id="foodItem" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="burger">Burger</option>
+                        <option value="pasta">Pasta</option>
+                        <option value="pizza">Pizza</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Place Order</button>
+            </form>
+        </div>
+    </section>
+    <section class="order-summary" id="order-summary">
+        <div class="container">
+            <h2 class="text-center my-5">Order Summary</h2>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Food Item</th>
+                    <th>Quantity</th>
+                    <th>Price per Item</th>
+                    <th>Total Price</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Pizza</td>
+                    <td>2</td>
+                    <td>$12</td>
+                    <td>$24</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2023 Foodie. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
