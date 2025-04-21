@@ -1,0 +1,39 @@
+/* Styling for the entire app container */
+#app {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styling for the task list */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+/* Styling for individual tasks in the list */
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Styling for the checkbox in each task */
+li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Styling for the task description in each task */
+li .task {
+    flex-grow: 1;
+}
+
+/* Styling for the "Add Task" button */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}

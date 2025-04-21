@@ -1,0 +1,4 @@
+1. Basics programming with JavaScript using if else statement, simple for loop
+2. User defined functions
+3. String concatenation using + operator
+4. DOM Manipulation - getElementById, innerHTML, querySelector, addEventListener, etc.
