@@ -50,17 +50,23 @@ function displayClubDetails(club) {
     // Create HTML content for club details
     const detailsHTML = `
         <div id="club-details">
-            <h1>${club.name}</h1>
-            <img src="${club.image}" alt="${club.name} Logo" style="width:200px; height:auto;">
-            <p><b>League:</b> ${club.league}</p>
-            <p><b>City:</b> ${club.city}</p>
-            <p><b>Stadium:</b> ${club.stadium}</p>
-            <p><b>Description:</b> ${club.description}</p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
-                <button id="back-button">Back</button>
-                <button id="view-players-button">View Players</button>
+            <button id="back-button">Back</button>
+
+            <h2>${club.name}</h2>
+
+            <img src="${club.image}" alt="${club.name} Logo" style="display: block; width: 250px; height: auto; margin: 0 auto 30px auto;">
+
+            <div style="text-align: center;">
+                <p><b>League:</b> ${club.league}</p>
+                <p><b>City:</b> ${club.city}</p>
+                <p><b>Stadium:</b> ${club.stadium}</p>
             </div>
+
+            <button id="view-players-button">View Players</button>
+
+            <p style="text-align: left;"><b>Description:</b> ${club.description}</p>
         </div>
+        <script src="script.js"></script>
     `;
 
     // Replace the content of the main body with club details
@@ -68,17 +74,17 @@ function displayClubDetails(club) {
 
     // Add event listener to the Back button
     document.getElementById('back-button').addEventListener('click', function() {
-        // Restore the original HTML structure
-        document.getElementById('main').innerHTML = `
+        // Reset the body to its original state
+        document.body.innerHTML = `
             <h1>Football Clubs Database</h1>
             <input type="text" id="search" placeholder="Search for a football club">
-            <div id="club-list"></div>
+            <div id="club-list">
+                <!-- Football club cards will be displayed here -->
+            </div>
+            <script src="script.js"></script>
         `;
-
-        // Re-initialize the search input and display all clubs
-        const searchInput = document.getElementById('search');
-        searchInput.addEventListener('input', handleSearchInput);
-        displayClubs(clubData);
+        // reload the page
+        window.location.reload();
     });
 
     // Add event listener to the View Players button
@@ -100,39 +106,27 @@ function viewClubPlayers(clubName) {
     // Create HTML content for player details
     let playersHTML = `
         <div id="club-details">
-            <h1>${club.name} Players</h1>
-            <table style="width:80%; margin:20px auto; border-collapse:collapse;">
-                <thead>
-                    <tr style="background-color:#333; color:white;">
-                        <th style="padding:10px; text-align:left;">Name</th>
-                        <th style="padding:10px; text-align:left;">Position</th>
-                        <th style="padding:10px; text-align:center;">Number</th>
-                        <th style="padding:10px; text-align:center;">Goals</th>
-                        <th style="padding:10px; text-align:center;">Assists</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <button id="back-button">Back</button>
+
+            <h2>${club.name} Players</h2>
     `;
 
-    // Add player rows to the table
+    // Add player cards
     club.players.forEach(player => {
         playersHTML += `
-            <tr style="border-bottom:1px solid #ddd;">
-                <td style="padding:10px;">${player.name}</td>
-                <td style="padding:10px;">${player.position}</td>
-                <td style="padding:10px; text-align:center;">${player.number}</td>
-                <td style="padding:10px; text-align:center;">${player.goals}</td>
-                <td style="padding:10px; text-align:center;">${player.assists}</td>
-            </tr>
+            <div style="border-bottom: 1px solid #ccc; padding: 15px 0;">
+                <p><b>Name:</b> ${player.name}</p>
+                <p><b>Position:</b> ${player.position}</p>
+                <p><b>Goals:</b> ${player.goals}</p>
+                <p><b>Assists:</b> ${player.assists}</p>
+            </div>
         `;
     });
 
-    // Close the table and add a Back button
+    // Close the container
     playersHTML += `
-                </tbody>
-            </table>
-            <button id="back-button" style="margin-top:20px;">Back</button>
         </div>
+        <script src="script.js"></script>
     `;
 
     // Replace the content of the main body with player details
@@ -140,17 +134,20 @@ function viewClubPlayers(clubName) {
 
     // Add event listener to the Back button
     document.getElementById('back-button').addEventListener('click', function() {
-        // Restore the original HTML structure
-        document.getElementById('main').innerHTML = `
+        // Instead of rebuilding the entire HTML structure, let's just reset the body content
+        // and re-initialize the necessary elements
+
+        // Reset the body to its original state
+        document.body.innerHTML = `
             <h1>Football Clubs Database</h1>
             <input type="text" id="search" placeholder="Search for a football club">
-            <div id="club-list"></div>
+            <div id="club-list">
+                <!-- Football club cards will be displayed here -->
+            </div>
+            <script src="script.js"></script>
         `;
-
-        // Re-initialize the search input and display all clubs
-        const searchInput = document.getElementById('search');
-        searchInput.addEventListener('input', handleSearchInput);
-        displayClubs(clubData);
+        // reload the page
+        window.location.reload();
     });
 }
 
