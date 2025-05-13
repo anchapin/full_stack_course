@@ -14,8 +14,17 @@ let currentvideoIndex = 0;
 let isShuffle = false;
 
 // Function to update the video playlist displayed in the UI
-function updatePlayList(playlist){
-    // Write your code here for task 1
+function updatePlayList(playlist) {
+    // Clear the current playlist
+    videoList.innerHTML = "";
+
+    // Iterate through the playlist and create <li> elements
+    playlist.forEach((video, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = video.title;
+        listItem.dataset.index = index; // Store the index as a data attribute
+        videoList.appendChild(listItem);
+    });
 }
 
 // Function to update the UI with video information
@@ -38,7 +47,12 @@ function playvideo(playlist) {
 
 // Event delegation for video selection in the playlist
 videoList.addEventListener('click', (e) => {
-    // Write your code here for task 2
+    const clickedItem = e.target;
+    if (clickedItem.tagName === 'LI') {
+        const index = parseInt(clickedItem.dataset.index, 10);
+        currentvideoIndex = index;
+        playvideo(isShuffle ? videos : originalList);
+    }
 });
 
 // Event listeners for play, next, and previous buttons
@@ -47,18 +61,22 @@ document.getElementById('play-button').addEventListener('click', () => {
 });
 
 document.getElementById('next-button').addEventListener('click', () => {
-    // Move to the next video and play it
-    // Write your code here for task 3
+    currentvideoIndex = (currentvideoIndex + 1) % (isShuffle ? videos.length : originalList.length);
+    playvideo(isShuffle ? videos : originalList);
 });
 
 document.getElementById('prev-button').addEventListener('click', () => {
-    // Move to the previous video and play it
-    // Write your code here for task 4
+    currentvideoIndex = (currentvideoIndex - 1 + (isShuffle ? videos.length : originalList.length)) % (isShuffle ? videos.length : originalList.length);
+    playvideo(isShuffle ? videos : originalList);
 });
 
 // Function to shuffle the array in place
 function shuffleArray(array) {
-    // Write your code here for task 5
+    for (let i = array.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        // Swap elements at i and randomIndex
+        [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+    }
 }
 
 // Event listener for the Shuffle button
