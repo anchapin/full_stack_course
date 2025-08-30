@@ -6,8 +6,9 @@ const AdminDashboard = () => {
     <>
       <Container>
         <h2 className="md-auto text-center p-4">Admin Dashboard</h2>
+
         <Row className="mb-3">
-          <Col className="mb-3">
+          <Col md={6} className="mb-3">
             <Card border="secondary">
               <Card.Body>
                 <Card.Title as="h4">Cuisines</Card.Title>
@@ -16,6 +17,96 @@ const AdminDashboard = () => {
                 </Button>
                 <Button variant="outline-info" size="sm" className="me-3">
                   Add Cuisine
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col md={6} className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Categories</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Categories
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Add Category
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row className="mb-3">
+          <Col md={6} className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Food Items</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Food Items
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Add Food Item
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col md={6} className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Restaurants</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Restaurants
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Add Restaurant
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row className="mb-3">
+          <Col md={6} className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Restaurant Menu</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Menu
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Add Menu Item
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col md={6} className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Orders</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Orders
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Manage Orders
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row className="mb-3">
+          <Col md={6} className="mb-3">
+            <Card border="secondary">
+              <Card.Body>
+                <Card.Title as="h4">Users</Card.Title>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  View Users
+                </Button>
+                <Button variant="outline-info" size="sm" className="me-3">
+                  Manage Users
                 </Button>
               </Card.Body>
             </Card>
