@@ -1,0 +1,38 @@
+[
+	{
+		"id" : "1",
+		"userName" : "john.doe",
+		"fullName" : "John Doe",
+		"emailId" : "john.doe@example.com",
+		"phoneNo" : 12345890,
+		"password" : "password123",
+		"isAdmin": true,
+		"isActive" : true,
+		"createdTs" : "2023-12-12 11:18:03",
+		"updatedTs" : "2023-12-12 11:18:03"
+	},
+	{
+		"id" : "2",
+		"userName" : "jane.doe",
+		"fullName" : "Jane Doe",
+		"emailId" : "jane.doe@example.com",
+		"phoneNo" : 9854321,
+		"password" : "password456",
+		"isAdmin": false,
+		"isActive" : true,
+		"createdTs" : "2023-12-12 11:18:03",
+		"updatedTs" : "2023-12-12 11:18:03"
+	},
+	{
+		"id" : "3",
+		"userName" : "bob.smith",
+		"fullName" : "Bob Smith",
+		"emailId" : "bob.smith@example.com",
+		"phoneNo" : 5234567,
+		"password" : "password789",
+		"isAdmin": false,
+		"isActive" : true,
+		"createdTs" : "2023-12-12 11:18:03",
+		"updatedTs" : "2023-12-12 11:18:03"
+	}
+]
