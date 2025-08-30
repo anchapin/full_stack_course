@@ -3,13 +3,7 @@ const fs = require("fs");
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    "YOUR MONGODB CONNECTION STRING",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect("mongodb://localhost:27017/food_order_app")
   .then(() => {
     console.log("Connected to MongoDB");
     // Call function to insert all data once connected

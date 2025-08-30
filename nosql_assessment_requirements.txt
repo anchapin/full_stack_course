@@ -1,0 +1,86 @@
+NoSQL - Assessment Requirements
+Food Order App Database Design in MongoDB
+
+OVERVIEW:
+- Design database for Food Order App in MongoDB
+- Create collections, insert documents, retrieve records
+- Create/insert operations via script.js file in Script_To_Populate_Database folder
+- Select operations via Mongo Shell or MONGOSH in MongoDB Compass
+
+COLLECTION DESIGNS:
+
+1. Users Collection:
+   - _id: Unique identifier
+   - username: User's username
+   - fullname: User's full name
+   - email: User's email address
+   - password: User's password
+   - isAdmin: Admin privileges flag
+   - isActive: Account active status
+   - createdTs: Creation timestamp
+   - updatedTs: Last update timestamp
+
+2. UserSessions Collection:
+   - _id: Unique identifier
+   - userId: Reference to user id
+   - sessionToken: Generated session token
+   - isActive: Session active status
+   - createdTs: Creation timestamp
+   - updatedTs: Last update timestamp
+
+3. Categories Collection:
+   - _id: Unique identifier
+   - name: Category name
+   - description: Category description
+   - image: Category image URL
+
+4. Cuisines Collection:
+   - _id: Unique identifier
+   - name: Cuisine name
+   - description: Cuisine description
+   - image: Cuisine image URL
+
+5. Restaurants Collection:
+   - _id: Unique identifier
+   - name: Restaurant name
+   - address: Restaurant address
+   - image: Restaurant image URL
+
+6. Fooditems Collection:
+   - _id: Unique identifier
+   - name: Food item name
+   - description: Food item description
+   - image: Food item image URL
+   - categoryId: Reference to category
+   - cuisineId: Reference to cuisine
+   - isVeg: Vegetarian flag
+   - isActive: Active status
+   - createdTs: Creation timestamp
+   - updatedTs: Last update timestamp
+
+7. Menus Collection:
+   - _id: Unique identifier
+   - restaurantId: Reference to restaurant
+   - isActive: Menu active status
+   - createdTs: Creation timestamp
+   - updatedTs: Last update timestamp
+
+8. MenuItems Collection:
+   - _id: Unique identifier
+   - menuId: Reference to menu
+   - fooditemId: Reference to food item
+   - isActive: Menu item active status
+   - createdTs: Creation timestamp
+   - updatedTs: Last update timestamp
+
+9. Carts Collection:
+   - _id: Unique identifier
+   - userId: Reference to user
+   - restaurantId: Reference to restaurant
+   - orderTotalPrice: Total cart price
+   - isActive: Cart active status
+
+IMPLEMENTATION NOTES:
+- Focus on main flow, minimal error handling
+- Use script.js for database population
+- Use Mongo Shell for queries
